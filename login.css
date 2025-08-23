@@ -1,0 +1,89 @@
+
+
+ /* Body background & centering */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg,#051f54 , #00f2ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fffefe;
+}
+
+/* Main box */
+.mainbox {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  border: 1px solid rgba(3, 0, 0, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;   /* 👈 keeps everything centered and same width */
+  transition: 0.3s;
+  margin: auto;
+}
+
+h2 { 
+  margin-bottom: 20px; 
+  color: #ffffff; 
+}
+
+/* Inputs & Select Dropdown */
+input, select {
+  width: 100%;       /* 👈 fills container, always aligned */
+  padding: 12px;
+  margin: 10px 0;    /* 👈 equal spacing for all fields */
+  border-radius: 8px;
+  border: 1px solid #000000;
+  font-size: 16px;
+  box-sizing: border-box;  /* 👈 keeps alignment consistent */
+  display: block;
+}
+
+/* Password box alignment */
+.password-box {
+  position: relative;
+}
+
+.password-box input {
+  width: 100%;
+}
+
+.password-box span {
+  position: absolute;
+  right:5%;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+} /* eyes */
+
+/* Inputs & Select Dropdown */
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 8px;
+  border: 1px solid #000000;
+  font-size: 16px;
+  box-sizing: border-box;
+  display: block;
+}
+
+/* Special style for Register/Login buttons */
+input[type="submit"] {
+  background: linear-gradient(135deg, #e733b7, #ed2b2b); /* Blue gradient */
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+input[type="submit"]:hover {
+  background: linear-gradient(135deg, #e733b7, #ed2b2b); /* reverse on hover */
+}
+

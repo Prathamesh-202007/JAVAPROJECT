@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="std.css">
+  <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>👨‍🎓 Student Dashboard</h1>
+    <button onclick="logout()">Logout</button>
+  </header>
+
+  <main>
+    <!-- Profile Section -->
+    <section class="profile">
+      <h2>👤 My Profile</h2>
+      <p><b>PRN:</b> <span id="studentRoll"></span></p>
+      <p><b>Name:</b> <span id="studentName"></span></p>
+      <p><b>Email:</b> <span id="studentEmail"></span></p>
+      <p><b>Role:</b> <span id="studentRole"></span></p>
+    </section>
+
+    <!-- QR Attendance -->
+    <section class="qr-section">
+      <h2>📷 Scan QR to Mark Attendance</h2>
+      <div id="reader"></div>
+      <button onclick="startScanner()">Start Scanner</button>
+    </section>
+
+    <!-- Attendance Summary -->
+    <section class="summary">
+      <canvas id="attendanceChart" width="200" height="200"></canvas>
+      <h2>📊 Attendance Summary</h2>
+      <p><b>Total Classes:</b> <span id="totalClasses">0</span></p>
+      <p><b>Present:</b> <span id="presentCount">0</span></p>
+      <p><b>Attendance %:</b> <span id="attendancePercent">0%</span></p>
+    </section>
+
+    <!-- Attendance Records Split -->
+    <section class="records">
+      <div class="box">
+        <h2>✅ Attended Lectures</h2>
+        <ul id="attendedList"></ul>
+      </div>
+
+      <div class="box">
+        <h2>❌ Missed Lectures</h2>
+        <ul id="missedList"></ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="std.js"></script>
+</body>
+</html>

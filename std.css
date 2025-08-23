@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #141E30, #0dc6d0);
+  color: #fff;
+}
+
+header {
+  background: rgba(0,0,0,0.85);
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header button {
+  background: #e31414;
+  border: none;
+  padding: 8px 15px;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+header button:hover { opacity: 0.9; }
+
+main {
+  padding: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+section {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+}
+
+h2 {
+  border-left: 5px solid #fff;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
+.records {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.box {
+  flex: 1;
+  background: rgba(0,0,0,0.4);
+  padding: 15px;
+  border-radius: 10px;
+  min-width: 300px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  background: rgba(255,255,255,0.15);
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 6px;
+}
+.summary {
+  text-align: center;
+}
+
+#attendanceChart {
+  display: block;
+  margin: 16px auto 0;
+}
+
+
