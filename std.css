@@ -1,12 +1,12 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #141E30, #0dc6d0);
-  color: #fff;
+  background: linear-gradient(135deg, #000000, rgb(0, 240, 220));
+  color: #ffffff;
 }
 
 header {
-  background: rgba(0,0,0,0.85);
+  background: rgba(255, 255, 255, 0.096);
   color: white;
   padding: 15px 30px;
   display: flex;

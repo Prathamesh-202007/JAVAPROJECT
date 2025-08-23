@@ -4,17 +4,16 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg,#051f54 , #00f2ff);
+  background: linear-gradient(135deg,#000000 , rgb(0, 240, 220));
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  color: #fffefe;
+  color: white;
 }
-
 /* Main box */
 .mainbox {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(252, 251, 251, 0.15);
   backdrop-filter: blur(12px);
   border-radius: 15px;
   border: 1px solid rgba(3, 0, 0, 0.2);
@@ -25,22 +24,22 @@ body {
   max-width: 400px;   /* 👈 keeps everything centered and same width */
   transition: 0.3s;
   margin: auto;
-}
+} /* register ke piche wala */
 
 h2 { 
   margin-bottom: 20px; 
   color: #ffffff; 
-}
+} /* register name */
 
 /* Inputs & Select Dropdown */
 input, select {
-  width: 100%;       /* 👈 fills container, always aligned */
+  width: 100%;       /*  fills container, always aligned */
   padding: 12px;
-  margin: 10px 0;    /* 👈 equal spacing for all fields */
+  margin: 10px 0;    /* equal spacing for all fields */
   border-radius: 8px;
   border: 1px solid #000000;
   font-size: 16px;
-  box-sizing: border-box;  /* 👈 keeps alignment consistent */
+  box-sizing: border-box;  /*  keeps alignment consistent */
   display: block;
 }
 
@@ -76,7 +75,7 @@ input, select {
 /* Special style for Register/Login buttons */
 input[type="submit"] {
   background: linear-gradient(135deg, #e733b7, #ed2b2b); /* Blue gradient */
-  color: white;
+  color: rgb(255, 255, 255);
   font-weight: bold;
   border: none;
   cursor: pointer;
