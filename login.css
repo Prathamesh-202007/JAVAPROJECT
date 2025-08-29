@@ -55,7 +55,7 @@ input, select {
 .password-box span {
   position: absolute;
   right:5%;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
   cursor: pointer;
 } /* eyes */

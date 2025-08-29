@@ -10,19 +10,19 @@
   <div class="mainbox">
     <h2>📝 Register</h2>
     <form onsubmit="registerUser(event)">
-      <input type="text" id="name" placeholder="Enter Your Name" required><br>
+      <input type="text" id="username" placeholder="Enter Your Name" required><br>
       <input type="tel" id="phone" placeholder="Enter Your Phone Number" required><br>
       <input type="email" id="email" placeholder="Enter Your Email" required><br>
 
-      <div class="password-box">
-        <input type="password" id="password" placeholder="Enter Your Password" required>
-        <span onclick="togglePassword('password')">👁️</span>
-      </div><br>
+ <div class="password-box">
+  <input type="password" id="password" placeholder="Enter Your Password" required>
+  <span class="button" onclick="togglePassword('password')">👁️</span>
+</div><br>
 
-      <div class="password-box">
-        <input type="password" id="confirm" placeholder="Confirm Your Password" required>
-        <span onclick="togglePassword('confirm')">👁️</span>
-      </div><br>
+<div class="password-box">
+  <input type="password" id="confirm" placeholder="Confirm Your Password" required>
+  <span class="toggle" onclick="togglePassword('confirm')">👁️</span>
+</div><br>
 
       <select id="role" required>
         <option value="">-- Select Role --</option>

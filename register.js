@@ -1,13 +1,15 @@
-// Toggle password for multiple fields
+// 👁️ Toggle password visibility
 function togglePassword(id) {
-  const pass = document.getElementById(id);
-  pass.type = pass.type === "password" ? "text" : "password";
+  const field = document.getElementById(id);
+  field.type = field.type === "password" ? "text" : "password";
 }
 
-// Register function
-function registerUser(event) {
+// 📝 Register User
+async function registerUser(event) {
   event.preventDefault();
-  const name = document.getElementById("name").value;
+
+  // ✅ match HTML ids
+  const username = document.getElementById("username").value;
   const phone = document.getElementById("phone").value;
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
@@ -19,16 +21,22 @@ function registerUser(event) {
     return;
   }
 
-  let users = JSON.parse(localStorage.getItem("users")) || [];
-  if (users.some(u => u.email === email)) {
-    alert("⚠️ User already registered. Please login.");
-    window.location.href = "login.html";
-    return;
+  try {
+    const res = await fetch("http://127.0.0.1:8081/api/users", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, phone, email, password, role })
+    });
+
+    if (res.ok) {
+      alert("✅ Registered successfully! Please login.");
+      window.location.href = "login.html"; // redirect
+    } else {
+      const text = await res.text();
+      alert("⚠️ Registration failed: " + text);
+    }
+  } catch (err) {
+    console.error(err);
+    alert("❌ Error connecting to server.");
   }
-
-  users.push({ name, phone, email, password, role });
-  localStorage.setItem("users", JSON.stringify(users));
-
-  alert("✅ Registered successfully! Please login.");
-  window.location.href = "login.html";
 }
