@@ -3,46 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teacher Dashboard</title>
-  <link rel="stylesheet" href="login.css">
+  <title>👨‍🏫 Teacher Dashboard</title>
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="std.css">
+
+  <!-- QRCode library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
-  <div class="mainbox">
-    <h2>🧑‍🏫 Teacher Dashboard</h2>
+  <header>
+    <h1>👨‍🏫 Teacher Dashboard</h1>
+	<button class="logout-btn" onclick="logout()">Logout</button>
+  </header>
 
-    <!-- QR Code Generator -->
-    <h3>Generate QR for Attendance</h3>
-    <button onclick="generateQRCode()">Generate QR</button>
-    <br>
-    <div id="qrcode"></div>
-    <br>
+  <main>
+    <!-- QR Section -->
+    <section>
+      <h2>📌 Generate QR for Attendance</h2>
+      <button onclick="generateQRCode()">Generate QR</button>
+      <div id="qrcode" style="margin-top:20px;"></div>
+      <p id="qr-info"></p>
+    </section>
 
-    <!-- Summary Section -->
-    <div id="summary">
-      <p>Total Students: <span id="total-students">0</span></p>
-      <p>Present Today: <span id="present-today">0</span></p>
-    </div>
+    <!-- Stats Section -->
+    <section>
+      <p><b>Total Students:</b> <span id="total-students">0</span></p>
+      <p><b>Present Today:</b> <span id="present-today">0</span></p>
+    </section>
 
-    <!-- Registered Students List -->
-    <h3>Registered Students</h3>
-    <ul id="student-list"></ul>
+    <!-- Students Section -->
+    <section>
+      <h3>👥 Registered Students</h3>
+      <ul id="student-list"></ul>
+    </section>
 
-    <!-- Attendance Table -->
-    <h3>Attendance Records</h3>
-    <table border="1">
-      <thead>
-        <tr>
-          <th>Student Name</th>
-          <th>Date</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody id="attendance-table"></tbody>
-    </table>
-  </div>
+    <!-- Attendance Records Section -->
+    <section>
+      <h3>📊 Attendance Records</h3>
+      <table border="1" cellspacing="0" cellpadding="6">
+        <thead>
+          <tr>
+            <th>Student Name</th>
+            <th>Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="attendance-table"></tbody>
+      </table>
+    </section>
+  </main>
 
-  <!-- Link to external JS -->
+  <!-- Teacher Script -->
   <script src="teacher.js"></script>
 </body>
 </html>

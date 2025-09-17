@@ -74,7 +74,7 @@ input, select {
 
 /* Special style for Register/Login buttons */
 input[type="submit"] {
-  background: linear-gradient(135deg, #e733b7, #ed2b2b); /* Blue gradient */
+  background: linear-gradient(135deg, rgb(215, 69, 181), #ed2b2b); /* Blue gradient */
   color: rgb(255, 255, 255);
   font-weight: bold;
   border: none;

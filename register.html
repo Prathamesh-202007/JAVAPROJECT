@@ -3,39 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register Page</title>
-  <link rel="stylesheet" href="login.css">
+  <title>Register</title>
+  <link rel="stylesheet" href="login.css"> <!-- reuse same CSS -->
+  <style>
+    .password-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .password-box input {
+      flex: 1;
+      padding-right: 40px; /* space for eye button */
+    }
+    .password-box button {
+      position: absolute;
+      right: 10px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
 </head>
 <body>
   <div class="mainbox">
     <h2>📝 Register</h2>
     <form onsubmit="registerUser(event)">
-      <input type="text" id="username" placeholder="Enter Your Name" required><br>
-      <input type="tel" id="phone" placeholder="Enter Your Phone Number" required><br>
-      <input type="email" id="email" placeholder="Enter Your Email" required><br>
+      <input type="text" id="username" placeholder="👤 Username" required>
+      <input type="text" id="phone" placeholder="📱 Phone" required>
+      <input type="email" id="email" placeholder="📧 Email" required>
+      
+      <div class="password-box">
+        <input type="password" id="password" placeholder="🔑 Password" required>
+        <button type="button" onclick="togglePassword('password', this)">👁️</button>
+      </div>
 
- <div class="password-box">
-  <input type="password" id="password" placeholder="Enter Your Password" required>
-  <span class="button" onclick="togglePassword('password')">👁️</span>
-</div><br>
-
-<div class="password-box">
-  <input type="password" id="confirm" placeholder="Confirm Your Password" required>
-  <span class="toggle" onclick="togglePassword('confirm')">👁️</span>
-</div><br>
+      <div class="password-box">
+        <input type="password" id="confirm" placeholder="🔑 Confirm Password" required>
+        <button type="button" onclick="togglePassword('confirm', this)">👁️</button>
+      </div>
 
       <select id="role" required>
         <option value="">-- Select Role --</option>
-        <option value="Teacher">Teacher</option>
-        <option value="Student">Student</option>
-      </select><br><br>
+        <option value="student">Student</option>
+        <option value="teacher">Teacher</option>
+      </select>
 
-      <input type="submit" value="Register">
-      <br><br>
-      <span>Already registered? <a href="login.html">Login here</a></span>
+      <button type="submit">Register</button>
     </form>
+
+    <p>Already have an account? <a href="login.html">Login</a></p>
   </div>
 
+  <!-- Toggle Password Script -->
+  <script>
+    function togglePassword(fieldId, btn) {
+      const field = document.getElementById(fieldId);
+      if (field.type === "password") {
+        field.type = "text";
+        btn.textContent = "🙈"; // change icon when visible
+      } else {
+        field.type = "password";
+        btn.textContent = "👁️"; // revert back
+      }
+    }
+  </script>
+
+  <!-- Link external JS -->
   <script src="register.js"></script>
 </body>
 </html>

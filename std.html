@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Dashboard</title>
   <link rel="stylesheet" href="std.css">
-  <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
 </head>
 <body>
   <header>
@@ -26,8 +25,9 @@
     <!-- QR Attendance -->
     <section class="qr-section">
       <h2>📷 Scan QR to Mark Attendance</h2>
-      <div id="reader"></div>
-      <button onclick="startScanner()">Start Scanner</button>
+	  <div id="reader" style="width: 300px; height: 300px;"></div>
+	  <button onclick="startScanner()">Start Scanner</button>
+	  <p id="scanResult"></p>
     </section>
 
     <!-- Attendance Summary -->
@@ -52,7 +52,9 @@
       </div>
     </section>
   </main>
-
+  <!-- At the very end of body -->
+  <script src="https://cdn.jsdelivr.net/npm/html5-qrcode/minified/html5-qrcode.min.js"></script>
   <script src="std.js"></script>
-</body>
-</html>
+  </body>
+  </html>
+

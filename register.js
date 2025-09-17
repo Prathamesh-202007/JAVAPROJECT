@@ -8,7 +8,6 @@ function togglePassword(id) {
 async function registerUser(event) {
   event.preventDefault();
 
-  // ✅ match HTML ids
   const username = document.getElementById("username").value;
   const phone = document.getElementById("phone").value;
   const email = document.getElementById("email").value;
@@ -21,22 +20,24 @@ async function registerUser(event) {
     return;
   }
 
+  const payload = { username, phone, email, password, role };
+
   try {
-    const res = await fetch("http://127.0.0.1:8081/api/users", {
+    const res = await fetch("/api/users", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, phone, email, password, role })
+      body: JSON.stringify(payload)
     });
 
     if (res.ok) {
       alert("✅ Registered successfully! Please login.");
-      window.location.href = "login.html"; // redirect
+      window.location.href = "login.html";
     } else {
       const text = await res.text();
       alert("⚠️ Registration failed: " + text);
     }
   } catch (err) {
-    console.error(err);
+    console.error("❌ Error:", err);
     alert("❌ Error connecting to server.");
   }
 }
